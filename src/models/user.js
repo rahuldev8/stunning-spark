@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
+
+//Database schema using mongoose
 const userSchema = new mongoose.Schema({
     firstName:{
         type: String,
@@ -56,17 +58,22 @@ const userSchema = new mongoose.Schema({
     }
 },{timestamps  : true});
 
+//password compare function
 userSchema.virtual('password')
 .set(function(password)
 {
     this.hash_password = bcrypt.hashSync(password, 10);
 });
 
+
+//virtual function to create fullname using first and last
 userSchema.virtual('fullName')
 .get(function(){
     return `${this.firstName} ${this.lastName}`;
 });
  
+
+//Aunthenticate function
 userSchema.methods = {
     authenticate: async function (password) {
       return await bcrypt.compareSync(password, this.hash_password);

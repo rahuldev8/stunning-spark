@@ -5,9 +5,8 @@ const User = require('../../models/user');
 
 const { signup,signin, requireSignin } = require('../../controllers/admin/auth');
 
-
+//path to admin pages
 router.post('/admin/signup',signup);
-
 router.post('/admin/signin',signin);
 
 

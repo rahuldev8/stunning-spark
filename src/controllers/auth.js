@@ -2,6 +2,8 @@ const User = require('../../models/user');
 
 const jwt = require('jsonwebtoken');
 
+
+//User Signup Logic
 exports.signup = (req, res) => {
     User.findOne({ email : req.body.email })
     .exec((error, user) =>
@@ -42,6 +44,8 @@ exports.signup = (req, res) => {
     });
 }
 
+
+//User signin logic
 exports.signin = (req, res) => {
     User.findOne({ email: req.body.email })
     .exec((error, user) => {
