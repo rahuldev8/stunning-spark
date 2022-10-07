@@ -16,7 +16,7 @@ app.use(express.json());
 
 //mongo db Connection key
 mongoose.connect(
-    `mongodb+srv://${process.env.MANGO_DB_USER}:${process.env.MANGO_DB_PASSWORD}@supreme-cluster.wlw3g3k.mongodb.net/${process.env.MANGO_DB_DATABASE}?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.MANGO_DB_USER}:${process.env.MANGO_DB_PASSWORD}@supreme-cluster.aquwxj1.mongodb.net/${process.env.MANGO_DB_DATABASE}?retryWrites=true&w=majority`
 ).then(() => {
    console.log('Database Connected Successfully ');
 });
