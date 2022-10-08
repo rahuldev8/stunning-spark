@@ -1,5 +1,6 @@
 import React from 'react';
 import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
+import {NavLink, Link} from 'react-router-dom';
 
 /**
 * @author
@@ -25,7 +26,13 @@ export const Header = (props) => {
                         }
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">Sign-in</Nav.Link>
+                        {/*<Nav.Link href="#deets">Sign-in</Nav.Link>*/}
+                        <NavLink to="/signin" className="nav-item">
+                            Signin
+                        </NavLink>
+                        <NavLink to="/signup" className="nav-item">
+                            Signup
+                        </NavLink>
                     </Nav>
                 </Navbar.Collapse>
 
