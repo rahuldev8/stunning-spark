@@ -60,10 +60,10 @@ const userSchema = new mongoose.Schema({
 
 //password compare function
 userSchema.virtual('password')
-.set(function(password)
-{
-    this.hash_password = bcrypt.hashSync(password, 10);
-});
+// .set(function(password)
+// {
+//     this.hash_password = bcrypt.hashSync(password, 10);
+// });
 
 
 //virtual function to create fullname using first and last
