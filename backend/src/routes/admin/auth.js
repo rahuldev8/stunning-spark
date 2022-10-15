@@ -7,7 +7,7 @@ const User = require('../../models/user');
 //signup and signin function will ba called via the auth in admin
 const { signup,signin, requireSignin } = require('../../controllers/admin/auth');
 
-//path to admin pages
+//path to admin page
 router.post('/admin/signup',signup);
 router.post('/admin/signin',signin);
 
