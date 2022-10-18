@@ -4,7 +4,7 @@
   "description": "An E-commerce website based on MERN Stack",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/server"
   },
   "repository": {
     "type": "git",

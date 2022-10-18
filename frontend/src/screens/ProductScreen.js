@@ -9,7 +9,7 @@ const product = products.find(p => p._id === match.params.id)
 
   return (
     <>
-    <a className='btn btn-light my-3' href='/'>
+    <a className='btn btn-danger' href='/'>
         Go Back
       </a>
       <Row>
