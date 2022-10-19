@@ -1,6 +1,6 @@
- const express = require('express')
- const dotenv = require('dotenv')
- const products = require('./Data/products')
+ import express from 'express'
+ import dotenv from 'dotenv'
+ import products from './Data/products.js'
 
  dotenv.config()
  const app = express()

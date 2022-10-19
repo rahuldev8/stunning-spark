@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An E-commerce website based on MERN Stack",
   "main": "server.js",
+  "type":"module",
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",
