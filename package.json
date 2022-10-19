@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An E-commerce website based on MERN Stack",
   "main": "server.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",
@@ -24,6 +24,7 @@
     "concurrently": "^7.4.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "mongoose": "^6.6.5",
     "nodemon": "^2.0.20"
   }
 }
