@@ -33,7 +33,7 @@ router.get(
             }
         } else {
             res.status(404).json({
-                message: "Invalid ID. Product not found",
+                message: "Product not found",
             });
         }
     })
