@@ -1,31 +1,27 @@
- import express from 'express'
- import dotenv from 'dotenv'
- import colors from 'colors'
- import connectDB from './config/db.js'
- import products from './Data/products.js'
+import express from 'express'
+import dotenv from 'dotenv'
+import colors from 'colors'
+import connectDB from './config/db.js'
 
- dotenv.config()
- connectDB()
- const app = express()
+import productRoutes from './routes/productRoutes.js'
 
- app.get('/', (req, res) => { 
-    res.send('API Connected Successfully...')
- })
+dotenv.config()
 
- app.get('/api/products', (req, res) => { 
-    //server sends back product details as json format
-    res.json(products)
- })
+connectDB()
 
- app.get('/api/products/:id', (req, res) => { 
-    //server sends back product details as json format
-    const product = products.find(p => p._id === req.params.id)
-    res.json(product)
- })
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send('API is running....')
+})
+
+app.use('/api/products', productRoutes)
 
 const PORT = process.env.PORT || 5000
 
- app.listen(
-    PORT, 
-    console.log(`Server is running in ${process.env.NODE_ENV} mode and port number ${PORT}`
-    .yellow))
+app.listen(
+  PORT,
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+  )
+)
