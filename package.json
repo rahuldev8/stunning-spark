@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Dev-jr-8/stunning-sprak#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "concurrently": "^7.4.0",
     "dotenv": "^16.0.3",
