@@ -32,6 +32,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.6.5",
     "nodemon": "^2.0.20",
+    "react-paypal-button-v2": "^2.6.3",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1"
   }
