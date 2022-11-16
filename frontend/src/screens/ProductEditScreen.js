@@ -120,7 +120,7 @@ const ProductEditScreen = ({ match, history }) => {
               <Form.Label>Price</Form.Label>
               <Form.Control
                 type='float'
-                placeholder='Enter price'
+                placeholder='Enter price in Rupees'
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               ></Form.Control>
