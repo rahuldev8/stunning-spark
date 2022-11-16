@@ -3,6 +3,10 @@ import {Link} from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 import Rating from './Rating'
 
+function numberWithCommas(price) {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 const Product = ({ product }) => {
   return (
     <Card className='my-3 p-3 rounded'>
@@ -21,7 +25,7 @@ const Product = ({ product }) => {
           <Rating value={product.rating} text={`${product.numReviews} review`}/>
         </Card.Text>
 
-        <Card.Text as='h3'>₹{product.price}</Card.Text>
+        <Card.Text as='h3'>₹{numberWithCommas(product.price)}</Card.Text>
       </Card.Body>
     </Card>
   )
