@@ -6,7 +6,6 @@ import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-
 import {
   getOrderDetails,
   payOrder,
@@ -17,7 +16,7 @@ import {
   ORDER_DELIVER_RESET,
 } from '../constants/orderConstants'
 
-const OrderScreen = ({ match }) => {
+const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id
 
   const [sdkReady, setSdkReady] = useState(false)
@@ -48,6 +47,10 @@ const OrderScreen = ({ match }) => {
   }
 
   useEffect(() => {
+    if (!userInfo) {
+      history.push('/login')
+    }
+
     const addPayPalScript = async () => {
       const { data: clientId } = await axios.get('/api/config/paypal')
       const script = document.createElement('script')
@@ -60,7 +63,7 @@ const OrderScreen = ({ match }) => {
       document.body.appendChild(script)
     }
 
-    if (!order || successPay|| successDeliver) {
+    if (!order || successPay || successDeliver) {
       dispatch({ type: ORDER_PAY_RESET })
       dispatch({ type: ORDER_DELIVER_RESET })
       dispatch(getOrderDetails(orderId))
@@ -71,7 +74,7 @@ const OrderScreen = ({ match }) => {
         setSdkReady(true)
       }
     }
-  }, [dispatch, orderId, successPay,successDeliver, order])
+  }, [dispatch, orderId, successPay, successDeliver, order])
 
   const successPaymentHandler = (paymentResult) => {
     console.log(paymentResult)
@@ -81,7 +84,6 @@ const OrderScreen = ({ match }) => {
   const deliverHandler = () => {
     dispatch(deliverOrder(order))
   }
-
 
   return loading ? (
     <Loader />
@@ -153,7 +155,7 @@ const OrderScreen = ({ match }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
+                          {item.qty} x ${item.price} = ${item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -172,25 +174,25 @@ const OrderScreen = ({ match }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Items</Col>
-                  <Col>₹{order.itemsPrice}</Col>
+                  <Col>${order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Shipping</Col>
-                  <Col>₹{order.shippingPrice}</Col>
+                  <Col>${order.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Tax</Col>
-                  <Col>₹{order.taxPrice}</Col>
+                  <Col>${order.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
-                  <Col>₹{order.totalPrice}</Col>
+                  <Col>${order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
               {!order.isPaid && (
@@ -207,17 +209,20 @@ const OrderScreen = ({ match }) => {
                 </ListGroup.Item>
               )}
               {loadingDeliver && <Loader />}
-              {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
-                <ListGroup.Item>
-                  <Button
-                    type='button'
-                    className='btn btn-block'
-                    onClick={deliverHandler}
-                  >
-                    Mark As Delivered
-                  </Button>
-                </ListGroup.Item>
-              )}
+              {userInfo &&
+                userInfo.isAdmin &&
+                order.isPaid &&
+                !order.isDelivered && (
+                  <ListGroup.Item>
+                    <Button
+                      type='button'
+                      className='btn btn-block'
+                      onClick={deliverHandler}
+                    >
+                      Mark As Delivered
+                    </Button>
+                  </ListGroup.Item>
+                )}
             </ListGroup>
           </Card>
         </Col>
