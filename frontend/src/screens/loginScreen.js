@@ -68,8 +68,6 @@ const LoginScreen = ({ location, history }) => {
             Register
           </Link>
         </Col>
-
-        <h1>Google Siginin</h1>
       </Row>
     </FormContainer>
     
