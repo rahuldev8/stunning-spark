@@ -6,7 +6,6 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import { login } from '../actions/userActions'
-import GoogleLoginHooks from '../components/GoogleLoginHooks'
 
 const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState('')

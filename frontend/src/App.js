@@ -18,8 +18,6 @@ import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
-import GoogleLoginHooks from './components/GoogleLoginHooks';
-import GoogleLogoutHooks from './components/GoogleLogoutHooks';
 
 const App =() => {
   return (
