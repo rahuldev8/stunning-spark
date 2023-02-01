@@ -20,13 +20,33 @@ const Header = () => {
     <header>
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
+
           <LinkContainer to='/'>
-            <Navbar.Brand>Stunning-Spark</Navbar.Brand>
+            <Nav.Link>
+            <img src="https://cdn.iconscout.com/icon/free/png-256/e-commerce-2596428-2167413.png"
+            width="60" height="60"/>
+            <Navbar.Brand> Stunning Spark</Navbar.Brand>
+            </Nav.Link>
           </LinkContainer>
+
+
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
           <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav className='ms-auto'>
+
+            <LinkContainer to='https://www.linkedin.com/in/rahul-sundararaj-016536214/'>
+                <Nav.Link>
+                  <i className="fa-brands fa-linkedin"></i> Linkedin
+                </Nav.Link>
+            </LinkContainer>
+
+            <LinkContainer to='https://github.com/Dev-jr-8'>
+                <Nav.Link>
+                  <i className="fa-brands fa-github"></i> GitHub
+                </Nav.Link>
+              </LinkContainer>
+
               <LinkContainer to='/cart'>
                 <Nav.Link>
                   <i className='fas fa-shopping-cart'></i> Shopping cart
