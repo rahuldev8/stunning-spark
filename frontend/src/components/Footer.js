@@ -19,9 +19,10 @@ const Footer = () => {
             Linkedin
             </a>
             </Navbar.Brand>
-
             </Nav>
         </Container> 
+
+        
 
         <Container>
         <Navbar.Brand>
