@@ -55,6 +55,19 @@ const ProductScreen = ({ history, match }) => {
     )
   }
 
+  function numberWithCommas(price) {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  
+  function mrp(price)
+  {
+    let new_mrp = (price*1.3).toFixed(2);
+    let mrp_format = numberWithCommas(new_mrp);
+    return mrp_format;
+  }
+
+  
+  
   return (
     <>
       <Link className='btn btn-light my-3' to='/'>
@@ -82,7 +95,8 @@ const ProductScreen = ({ history, match }) => {
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ₹{product.price}</ListGroup.Item>
+                <ListGroup.Item><strong>Today's Deal : ₹{product.price}</strong></ListGroup.Item>
+                <ListGroup.Item className='mrp_on_card'>MRP: ₹{mrp(product.price)}</ListGroup.Item>
                 <ListGroup.Item>
                   Description: {product.description}
                 </ListGroup.Item>

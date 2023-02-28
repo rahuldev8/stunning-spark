@@ -10,7 +10,16 @@ body {
 
 *{
   margin: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+a{
   text-decoration: none;
+}
+
+a:visited{
+  text-decoration: none;
+  font-weight: bold;
 }
 
 code {
@@ -173,6 +182,19 @@ a.google{
 
 .list-unstyled{
   color:green;
+}
+
+.home_heading{
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: bolder;
+  margin-top: 30px;
+  padding-bottom: 0px;
+}
+
+.mrp_on_card{
+  text-decoration: line-through;
+  color: red;
 }
 
 
