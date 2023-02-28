@@ -9,10 +9,10 @@ import logo from '../images/logo.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faGithub,
-    faLinkedin,
   } from "@fortawesome/free-brands-svg-icons";
 import 'react-tooltip/dist/react-tooltip.css'  
-import { Tooltip } from 'react-tooltip'
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -44,10 +44,10 @@ const Header = () => {
             <Nav className='ms-auto'>
 
             <div className="header-social-container">
-              <a href="https://github.com/Dev-jr-8/stunning-spark" className="github_header social" target="_blank">
-                <FontAwesomeIcon icon={faGithub} size="2x" />
-              </a>
-            </div>    
+                    <a href="https://github.com/Dev-jr-8/stunning-spark" className="github_header social" target="_blank">
+                      <FontAwesomeIcon icon={faGithub} size="2x" />
+                    </a>
+                  </div> 
 
               <LinkContainer to='/cart'>
                 <Nav.Link>

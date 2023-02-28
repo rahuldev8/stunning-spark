@@ -10,6 +10,7 @@ body {
 
 *{
   margin: 0px;
+  text-decoration: none;
 }
 
 code {
@@ -86,26 +87,47 @@ a.social {
 
 a.social:hover {
   transform: translateY(-4px);
+  color:tomato;
+}
+
+a.github:hover
+{
+  transform: translateY(-4px);
+  color: #6cc644;
+}
+
+a.linkedin:hover{
+  transform: translateY(-4px);
+  color: #0a66c2;
+}
+
+a.portfolio:hover{
+  transform: translateY(-4px);
+  color: yellow;
+}
+
+a.footer_name:hover{
+  transform:scale(100px);
 }
 
 a.github {
-  color: #000000;
+  color: #ffffff;
 }
 
 .github_header{
   color: white;
 }
 
-.linkedin_header{
-  color: rgb(58, 58, 240);
+a.portfolio{
+  color:white;
 }
 
 a.linkedin {
-  color: #0073b1;
+  color: #ffffff;
 }
 
 a.google{
-  color:#f32700;
+  color:#ffffff;
 }
 
 .credit{
@@ -129,6 +151,28 @@ a.google{
 .header-social-container{
   padding-right: 30px;
   padding-top: 4px;
+}
+
+.main-footer {
+  color: white;
+  background-color: #212529;
+  padding-top: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.row{
+  text-align: center;
+  justify-content: space-between;
+}
+
+.footer_name{
+  color:white;
+}
+
+.list-unstyled{
+  color:green;
 }
 
 

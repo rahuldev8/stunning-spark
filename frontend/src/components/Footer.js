@@ -7,7 +7,6 @@ import SocialFollow from './SocialLink'
 const Footer = () => {
   const dispatch = useDispatch()
 
-  
   return (
     <footer className="footer">
       <SocialFollow />
