@@ -11,6 +11,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "build": "cd backend && npm install && cd ../frontend && npm install npm run build"
   },
   "repository": {
