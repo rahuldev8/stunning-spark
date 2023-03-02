@@ -13,7 +13,7 @@
     "data:destroy": "node backend/seeder -d",
     "predeploy":"npm run build",
     "deploy":"gh-pages -d build",
-    "build": "cd backend && npm install && cd ../frontend && npm install npm run build"
+    "build": "npm install"
   },
   "repository": {
     "type": "git",
