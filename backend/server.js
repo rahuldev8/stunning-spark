@@ -46,7 +46,7 @@ if (process.env.NODE_ENV === 'production') {
   )
 } else {
   app.get('/', (req, res) => {
-    res.send('API is running....')
+    res.send('Kudumbangal Kondadum Server is live')
   })
 }  
 
@@ -59,6 +59,6 @@ const PORT = process.env.PORT || 6000
 app.listen(
   PORT,
   console.log( 
-    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`
+    `Server running in ${process.env.NODE_ENV} mode on ${PORT} port`
   )
 )
